@@ -6,7 +6,6 @@ import { useEffect } from "react";
 const IhorPage = () => {
     const navigate = useNavigate();
     const { userId } = useParams();
-const [sdvsvd,vsdvsdv]  =use
 
     useEffect(() => {
         const isAdmin  = localStorage.getItem("isAdmin");

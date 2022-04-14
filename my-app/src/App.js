@@ -12,7 +12,8 @@ const App = () => {
     localStorage.setItem("isAdmin", true);
   return (
     <div className="App">
-        {showNavbar(path) && <h1>HEADER</h1>}//Todo create Link to your page
+        {showNavbar(path) && <h1>HEADER</h1>}
+        {/*//Todo create Link to your page*/}
         {/*{ !showNavbar ? <h2>False</h2> : <h3>True</h3>}*/}
         {/*<BrowserRouter>*/}
             <Routes>
