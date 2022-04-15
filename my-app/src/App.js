@@ -23,7 +23,7 @@ const App = () => {
                 <Route path="teams" element={<IhorPage />}>
                     <Route path={RouteConst.USER_ID} element={<IhorPage />}/>
                 </Route>
-                <Route path="anjoanka" element={<AndrianaMPage />} />
+                <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route
                     path="*"
