@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation, Link } from "react-router-dom";
 import IhorPage from "./pages/Igor/IhorPage";
 import NotFoundPage from "./pages/404/404";
 import { RouteConst } from "./common/RouteConst";
 import { showNavbar } from "./utils";
+import DanyloPage from './pages/Danylo/DanyloPage';
 
 const App = () => {
     const path = useLocation().pathname;
@@ -15,7 +16,10 @@ const App = () => {
         {showNavbar(path) && <h1>HEADER</h1>}
         {/*//Todo create Link to your page*/}
         {/*{ !showNavbar ? <h2>False</h2> : <h3>True</h3>}*/}
-        {/*<BrowserRouter>*/}
+        {/* <BrowserRouter> */}
+            <nav>
+                <Link to={RouteConst.DANYLO}>The page of Danylo</Link>
+            </nav>
             <Routes>
                 <Route path={RouteConst.MENTOR} element={<IhorPage />}/>
                 {/*<Route path="igor" element={<IhorPage />}/>*/}
@@ -23,12 +27,14 @@ const App = () => {
                     <Route path={RouteConst.USER_ID} element={<IhorPage />}/>
                 </Route>
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
+                <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
+
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
                 />
             </Routes>
-        {/*</BrowserRouter>*/}
+        {/* </BrowserRouter> */}
     </div>
   );
 }
