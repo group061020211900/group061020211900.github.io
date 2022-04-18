@@ -3,6 +3,10 @@ export const RouteConst={
     USER_ID: ":userId",
     MENTOR: "/",
     DANYLO: "/danylo",
+    ADMIN: "/admin",
+    IhorKurylov: "/IhorKurylov",
+    VitrikushIhor: "/VitrikushIhor",
+    MARK: "/mark",
 }
 
 export const IhorRoutes= {
