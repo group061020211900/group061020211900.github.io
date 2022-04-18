@@ -5,6 +5,7 @@ import IhorPage from "./pages/Igor/IhorPage";
 import NotFoundPage from "./pages/404/404";
 import { RouteConst } from "./common/RouteConst";
 import { showNavbar } from "./utils";
+import MarkPage from "./pages/Mark/MarkPage";
 
 const App = () => {
     const path = useLocation().pathname;
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="teams" element={<IhorPage />}>
                     <Route path={RouteConst.USER_ID} element={<IhorPage />}/>
                 </Route>
+                <Route path={RouteConst.MARK} element={<MarkPage/>} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route
                     path="*"
