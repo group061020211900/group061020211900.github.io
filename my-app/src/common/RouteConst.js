@@ -4,6 +4,7 @@ export const RouteConst={
     MENTOR: "/",
     ADMIN: "/admin",
     IhorKurylov: "/IhorKurylov",
+    VitrikushIhor: "/VitrikushIhor",
     MARK: "/mark",
 }
 
