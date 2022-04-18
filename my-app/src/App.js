@@ -9,6 +9,7 @@ import AdminPage from "./pages/AdminPage/AdminPage";
 import { useEffect } from "react";
 import PrivateRoute from "./common/HOC/PrivateRoute";
 import { VitrikushIhor } from './pages/VitrikushIhorPage/VitrikushIhor';
+import MarkPage from "./pages/Mark/MarkPage";
 
 const App = () => {
     const path = useLocation().pathname;
@@ -49,6 +50,8 @@ const App = () => {
                     <Route path={RouteConst.USER_ID} element={<IhorPage />} />
                 </Route>
                 {/*<Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />*/}
+                <Route path={RouteConst.MARK} element={<MarkPage/>} />
+                <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}

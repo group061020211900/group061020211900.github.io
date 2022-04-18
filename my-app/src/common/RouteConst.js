@@ -5,6 +5,7 @@ export const RouteConst={
     ADMIN: "/admin",
     IhorKurylov: "/IhorKurylov",
     VitrikushIhor: "/VitrikushIhor",
+    MARK: "/mark",
 }
 
 export const IhorRoutes= {
