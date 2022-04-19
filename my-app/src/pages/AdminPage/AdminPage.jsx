@@ -1,12 +1,11 @@
 import styles from "./AdminPage.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 import { RouteConst } from "../../common/RouteConst";
-import { useEffect } from "react";
 import {
 
     Outlet,
 } from "react-router-dom";
-const AdminPage = () => {
+const IhorKurylovPage = () => {
     const navigate = useNavigate();
     // const { userId } = useParams();
 
@@ -20,4 +19,4 @@ const AdminPage = () => {
     )
 }
 
-export default AdminPage;
+export default IhorKurylovPage;
