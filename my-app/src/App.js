@@ -29,7 +29,7 @@ const App = () => {
             {/*{ !showNavbar ? <h2>False</h2> : <h3>True</h3>}*/}
             {/*<BrowserRouter>*/}
             <Routes>
-                <Route path={RouteConst.MENTOR} element={<IhorPage />} />
+                {/*<Route path={RouteConst.MENTOR} element={<IhorPage />} />*/}
                 {/*<Route element={<PrivateRoute />}>*/}
                 {/*    <Route path={RouteConst.ADMIN} element={<AdminPage />}/>*/}
                 {/*</Route>*/}
