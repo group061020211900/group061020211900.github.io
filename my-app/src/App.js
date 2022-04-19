@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import PrivateRoute from "./common/HOC/PrivateRoute";
 import { VitrikushIhor } from './pages/VitrikushIhorPage/VitrikushIhor';
 import MarkPage from "./pages/Mark/MarkPage";
-
+import VasylPage from './pages/VasylPage/VasylPage';
 const App = () => {
     const path = useLocation().pathname;
     // console.log(path);
@@ -53,7 +53,7 @@ const App = () => {
                 <Route path={RouteConst.MARK} element={<MarkPage/>} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
-
+                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
