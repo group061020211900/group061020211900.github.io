@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import PrivateRoute from "./common/HOC/PrivateRoute";
 import { VitrikushIhor } from './pages/VitrikushIhorPage/VitrikushIhor';
 import MarkPage from "./pages/Mark/MarkPage";
+import DanyloPage from "./pages/Danylo/DanyloPage";
 import VasylPage from './pages/VasylPage/VasylPage';
 const App = () => {
     const path = useLocation().pathname;
