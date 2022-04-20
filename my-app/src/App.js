@@ -7,12 +7,12 @@ import { showNavbar } from "./utils";
 import { VitrikushIhor } from './pages/VitrikushIhorPage/VitrikushIhor';
 import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
+import VasylPage from './pages/VasylPage/VasylPage';
 import { useEffect } from "react";
 import MainPage from "./pages/Igor/IhorPage";
 import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 import ProtectedRoute from "./common/HOC/PrivateRoute";
 import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
-
 
 const App = () => {
     const path = useLocation().pathname;
@@ -52,7 +52,7 @@ const App = () => {
                 <Route path={RouteConst.MARK} element={<MarkPage/>} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
-
+                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}

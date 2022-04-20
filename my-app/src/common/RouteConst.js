@@ -8,6 +8,7 @@ export const RouteConst={
     IhorKurylov: "/IhorKurylov",
     VitrikushIhor: "/VitrikushIhor",
     MARK: "/mark",
+    VASYLYATSISHIN: "/vasylyatsishin"
 }
 
 export const IhorRoutes= {
