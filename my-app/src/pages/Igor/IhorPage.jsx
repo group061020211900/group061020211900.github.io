@@ -38,6 +38,8 @@ const MainPage = () => {
         <div className={styles.container}>
             <h1>Main page</h1>
             <Link to={RouteConst.IhorKurylov}>Go to Mentors page</Link>
+            <br/>
+            <Link to={RouteConst.MARK}>Go to {RouteConst.MARK} page</Link>
             {/*//TODO set redirects to your Route*/}
             {/*<h1 onClick={()=> navigate(RouteConst.NOT_FOUND_PAGE)}>IhorPage</h1>*/}
             {/*<h1 onClick={()=> setCount((prevState) => ++prevState )}>IhorPage count {count}</h1>*/}

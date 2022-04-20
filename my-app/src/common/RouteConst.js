@@ -1,5 +1,6 @@
 export const RouteConst={
     MAIN: "/",
+    USERS: "users",
     NOT_FOUND_PAGE: "/error",
     USER_ID: ":userId",
     DANYLO: "/danylo",

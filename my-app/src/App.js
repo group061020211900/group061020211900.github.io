@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import MainPage from "./pages/Igor/IhorPage";
 import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 import ProtectedRoute from "./common/HOC/PrivateRoute";
+import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 
 
 const App = () => {
@@ -35,16 +36,19 @@ const App = () => {
                 <Route path={RouteConst.MAIN} element={<MainPage />} />
                 <Route path={RouteConst.VitrikushIhor} element={<VitrikushIhor />} />
 
-                <Route element={
-                    <ProtectedRoute
-                        isAllowed={user.role.includes("admin")}
-                        redirectPath={RouteConst.NOT_FOUND_PAGE}
-                    />}
-                >
-                    <Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />
-                </Route>
-                <Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />
-                <Route path={`${RouteConst.IhorKurylov}/form`} element={<NotFoundPage />} />
+                {/*<Route element={*/}
+                {/*    <ProtectedRoute*/}
+                {/*        isAllowed={user.role.includes("admin")}*/}
+                {/*        redirectPath={RouteConst.NOT_FOUND_PAGE}*/}
+                {/*    />}*/}
+                {/*>*/}
+                {/*    <Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
+                {/*</Route>*/}
+                {/*<Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
+                <Route path={RouteConst.IhorKurylov} element={<IhorKurylovUsersPage />} />
+
+
+                {/*<Route path={`${RouteConst.IhorKurylov}/form`} element={<NotFoundPage />} />*/}
                 <Route path={RouteConst.MARK} element={<MarkPage/>} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
