@@ -13,17 +13,17 @@ import MainPage from "./pages/Igor/IhorPage";
 import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 import ProtectedRoute from "./common/HOC/PrivateRoute";
 import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
-
+import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
 const App = () => {
     const path = useLocation().pathname;
     // console.log(path);
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem("user", JSON.stringify({
             role: "admin"
         }));
 
-    },[])
+    }, [])
 
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user)
@@ -34,7 +34,8 @@ const App = () => {
             </div>)}
             <Routes>
                 <Route path={RouteConst.MAIN} element={<MainPage />} />
-                <Route path={RouteConst.VitrikushIhor} element={<VitrikushIhor />} />
+                <Route path={RouteConst.Vitrikush_Ihor} element={<VitrikushIhor />} />
+                <Route path={RouteConst.Vitrikush_Ihor_FORM} element={<VitrikushIhorForm />} />
 
                 {/*<Route element={*/}
                 {/*    <ProtectedRoute*/}
@@ -49,10 +50,10 @@ const App = () => {
 
 
                 {/*<Route path={`${RouteConst.IhorKurylov}/form`} element={<NotFoundPage />} />*/}
-                <Route path={RouteConst.MARK} element={<MarkPage/>} />
+                <Route path={RouteConst.MARK} element={<MarkPage />} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
-                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
+                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
