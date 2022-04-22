@@ -1,43 +1,71 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import IhorPage from "./pages/Igor/IhorPage";
 import AndrianaMPage from './pages/AndrianaM/AndrianaMPage'
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import NotFoundPage from "./pages/404/404";
 import { RouteConst } from "./common/RouteConst";
 import { showNavbar } from "./utils";
+import { VitrikushIhor } from './pages/VitrikushIhorPage/VitrikushIhor';
+import MarkPage from "./pages/Mark/MarkPage";
+import DanyloPage from "./pages/Danylo/DanyloPage";
+import VasylPage from './pages/VasylPage/VasylPage';
+import { useEffect } from "react";
+import MainPage from "./pages/Igor/IhorPage";
+import IhorKurylovPage from "./pages/AdminPage/AdminPage";
+import ProtectedRoute from "./common/HOC/PrivateRoute";
+import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 
 const App = () => {
     const path = useLocation().pathname;
     // console.log(path);
-    localStorage.setItem("isAdmin", true);
-  return (
-    <div className="App">
-        {/* {showNavbar(path) && <h1>HEADER</h1>} */}
-        {/*//Todo create Link to your page*/}
-    {/*{ !showNavbar ? <h2>False</h2> : <h3>True</h3>}*/}
-        {/*<BrowserRouter>*/}
+    useEffect(()=>{
+        localStorage.setItem("user", JSON.stringify({
+            role: "admin"
+        }));
+
+    },[])
+
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user)
+    return (
+        <div className="App">
+            {showNavbar(path) && (<div>
+                <h1>HEADER</h1>
+            </div>)}
             <Routes>
-                {/* <Route path={RouteConst.MENTOR} element={<IhorPage />}/> */}
-                <Route path="igor" element={<IhorPage />}/>
-                <Route path="teams" element={<IhorPage />}>
-                    <Route path={RouteConst.USER_ID} element={<IhorPage />}/>
-                </Route>
-                <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
+                <Route path={RouteConst.MAIN} element={<MainPage />} />
+                <Route path={RouteConst.VitrikushIhor} element={<VitrikushIhor />} />
+
+                {/*<Route element={*/}
+                {/*    <ProtectedRoute*/}
+                {/*        isAllowed={user.role.includes("admin")}*/}
+                {/*        redirectPath={RouteConst.NOT_FOUND_PAGE}*/}
+                {/*    />}*/}
+                {/*>*/}
+                {/*    <Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
+                {/*</Route>*/}
+                {/*<Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
+                <Route path={RouteConst.IhorKurylov} element={<IhorKurylovUsersPage />} />
+
+
+                {/*<Route path={`${RouteConst.IhorKurylov}/form`} element={<NotFoundPage />} />*/}
+                <Route path={RouteConst.MARK} element={<MarkPage/>} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
+                <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
+                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
+                <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
                 />
             </Routes>
-        {/*</BrowserRouter>*/}
-    </div>
-  );
+        </div>
+    );
 }
 
 const AppContainer = () => (
     <BrowserRouter>
-        <App/>
+        <App />
     </BrowserRouter>
 );
 
