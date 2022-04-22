@@ -1,5 +1,4 @@
 import { useState } from "react";
-import photo from "./photos/photo.jpg";
 import styles from "./VasylPage.module.css";
 import { useNavigate } from "react-router-dom";
 import { JSONPlaceholder } from "../../api/api";
@@ -9,7 +8,6 @@ const VasylPage = () => {
   const [info, setInfo] = useState({
     name: "Василь Яцишин",
     age: 15,
-    photo: photo,
   });
   const [com, setCom] = useState();
 
