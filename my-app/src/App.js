@@ -15,7 +15,7 @@ const App = () => {
     <div className="App">
         {/* {showNavbar(path) && <h1>HEADER</h1>} */}
         {/*//Todo create Link to your page*/}
-        {/*{ !showNavbar ? <h2>False</h2> : <h3>True</h3>}*/}
+    {/*{ !showNavbar ? <h2>False</h2> : <h3>True</h3>}*/}
         {/*<BrowserRouter>*/}
             <Routes>
                 {/* <Route path={RouteConst.MENTOR} element={<IhorPage />}/> */}
