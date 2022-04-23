@@ -21,7 +21,11 @@ const instance = axios.create({
 
 export const JSONPlaceholder = {
     getUsers(){
-        return instance.get(Endpoints.POSTS)
+        return instance.get(Endpoints.POSTS);
+    },
+    getPhotos() {
+        return instance.get(Endpoints.PHOTOS);
+        
     },
     // getUsersToken(token){
     //     return tokenInstance(token).get(Endpoints.POSTS)
