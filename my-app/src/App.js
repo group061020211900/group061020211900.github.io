@@ -53,7 +53,6 @@ const App = () => {
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
                 <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
-                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
                 <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
                 <Route
                     path="*"
