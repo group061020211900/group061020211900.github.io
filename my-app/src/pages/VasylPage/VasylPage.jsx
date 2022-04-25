@@ -12,7 +12,7 @@ const VasylPage = () => {
     age: 15,
   });
   const GetData = () => {
-    JSONPlaceholder.getUsers()
+    JSONPlaceholder.getComments()
       .then((response) => {
         var data = response.data;
         const comment = data.map((el) => {
