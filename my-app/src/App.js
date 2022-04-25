@@ -1,5 +1,6 @@
 
 import './App.css';
+import AndrianaMPage from './pages/AndrianaM/AndrianaMPage'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import NotFoundPage from "./pages/404/404";
 import { RouteConst } from "./common/RouteConst";
@@ -17,7 +18,6 @@ import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 const App = () => {
     const path = useLocation().pathname;
     // console.log(path);
-
     useEffect(()=>{
         localStorage.setItem("user", JSON.stringify({
             role: "admin"
@@ -53,6 +53,8 @@ const App = () => {
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
                 <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
+                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
+                <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
