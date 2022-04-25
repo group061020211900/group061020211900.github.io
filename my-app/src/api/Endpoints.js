@@ -1,7 +1,8 @@
 import { JSONPlaceholder } from "./api";
 
 export const Endpoints = {
-    POSTS: "/postsw",
+    POSTS: "/posts",
+    PHOTOS: "albums/1/photos",
     COMMENTS: "/comments"
 }
 

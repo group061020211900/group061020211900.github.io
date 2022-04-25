@@ -8,9 +8,11 @@ export const RouteConst={
     DANYLO: "/danylo",
     ADMIN: "/admin",
     IhorKurylov: "/IhorKurylov",
-    VitrikushIhor: "/VitrikushIhor",
+    Vitrikush_Ihor: "/VitrikushIhor",
     MARK: "/mark",
-    VASYLYATSISHIN: "/vasylyatsishin"
+    VASYLYATSISHIN: "/vasylyatsishin",
+    Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
+
 }
 
 export const IhorRoutes= {
