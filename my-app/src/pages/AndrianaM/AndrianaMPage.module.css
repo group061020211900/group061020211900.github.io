@@ -1,0 +1,13 @@
+.container{
+    background-color: plum;
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+    padding: 20px;
+}
+
+li{
+    padding: 10px;
+}
