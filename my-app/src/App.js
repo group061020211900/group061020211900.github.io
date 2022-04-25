@@ -1,6 +1,5 @@
 
 import './App.css';
-import AndrianaMPage from './pages/AndrianaM/AndrianaMPage'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import NotFoundPage from "./pages/404/404";
 import { RouteConst } from "./common/RouteConst";
@@ -8,13 +7,12 @@ import { showNavbar } from "./utils";
 import { VitrikushIhor } from './pages/VitrikushIhorPage/VitrikushIhor';
 import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
-import VasylPage from './pages/VasylPage/VasylPage';
 import { useEffect } from "react";
 import MainPage from "./pages/Igor/IhorPage";
 import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 import ProtectedRoute from "./common/HOC/PrivateRoute";
-import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
-import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
+import PageVolodia from "./pages/Volodia/PageVolodia";
+
 const App = () => {
     const path = useLocation().pathname;
     // console.log(path);
@@ -55,6 +53,7 @@ const App = () => {
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
                 <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
                 <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
+                <Route path={RouteConst.Volodia} element={<PageVolodia />} />
                 <Route
                     path="*"
                     element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
