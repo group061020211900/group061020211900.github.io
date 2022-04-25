@@ -23,6 +23,9 @@ export const JSONPlaceholder = {
     getUsers(){
         return instance.get(Endpoints.POSTS)
     },
+    getPhotos() {
+        return instance.get(Endpoints.PHOTOS);
+    },
     getComments(){
         return instance.get(Endpoints.COMMENTS)
     },
