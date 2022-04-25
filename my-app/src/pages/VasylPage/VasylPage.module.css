@@ -2,3 +2,9 @@
     width: 230px;
     height: 250px;
 }
+
+.VasylPage{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -25,7 +25,9 @@ export const JSONPlaceholder = {
     },
     getPhotos() {
         return instance.get(Endpoints.PHOTOS);
-        
+    },
+    getComments(){
+        return instance.get(Endpoints.COMMENTS)
     },
     // getUsersToken(token){
     //     return tokenInstance(token).get(Endpoints.POSTS)
