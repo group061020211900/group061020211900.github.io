@@ -11,3 +11,20 @@ ul{
 li{
     padding: 10px;
 }
+
+.links{
+    padding-top: 100px;
+}
+
+.link{
+    text-decoration: none;
+    padding: 50px;
+    font-size: 23px;
+    color: aliceblue;
+}
+
+.link:hover{
+    color: bisque;
+    transition: all .3s;
+}
+

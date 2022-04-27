@@ -5,6 +5,8 @@ export const RouteConst={
     USER_ID: ":userId",
     MENTOR: "/",
     ANDRIANA_M: "/anjoanka",
+    ANDRIANA_FORM: "/anjoanka/form",
+    ANDRIANA_INFO: "/anjoanka/about",
     DANYLO: "/danylo",
     ADMIN: "/admin",
     IhorKurylov: "/IhorKurylov",

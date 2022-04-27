@@ -1,4 +1,3 @@
-
 import './App.css';
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import NotFoundPage from "./pages/404/404";
@@ -9,9 +8,16 @@ import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
 import { useEffect } from "react";
 import MainPage from "./pages/Igor/IhorPage";
-import IhorKurylovPage from "./pages/AdminPage/AdminPage";
+import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 import ProtectedRoute from "./common/HOC/PrivateRoute";
 import PageVolodia from "./pages/Volodia/PageVolodia";
+import AndrianaMPage from './pages/AndrianaM/AndrianaMPage';
+import { VitrikushIhorForm } from './pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm';
+import VasylPage from './pages/VasylPage/VasylPage';
+import AndrianaForm from './pages/AndrianaM/AndrianaForm/AndrianaForm';
+import AndrianaInfo from './pages/AndrianaM/AndrianaInfo/AndrianaInfo';
+
+
 
 const App = () => {
     const path = useLocation().pathname;
@@ -51,8 +57,10 @@ const App = () => {
                 <Route path={RouteConst.MARK} element={<MarkPage />} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
                 <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
-                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage/>} />
+                <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
                 <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
+                <Route path={RouteConst.ANDRIANA_FORM} element={<AndrianaForm />} />
+                <Route path={RouteConst.ANDRIANA_INFO} element={<AndrianaInfo />} />
                 <Route path={RouteConst.Volodia} element={<PageVolodia />} />
                 <Route
                     path="*"
