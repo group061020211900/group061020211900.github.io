@@ -64,7 +64,7 @@ const IhorKurylovUsersPage = () => {
     }
     const func = (value) => value*5;
     console.log(func(func(func(5))))
-    console.log(compose(func(), 5))
+    // console.log(compose(func(), 5))
 
   useEffect( () => {
     setTimeout(() => {

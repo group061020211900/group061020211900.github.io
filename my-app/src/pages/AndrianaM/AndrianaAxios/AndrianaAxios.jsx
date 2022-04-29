@@ -18,7 +18,7 @@ const AndrianaAxios = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        JSONPlaceholder.getUsers()
+        JSONPlaceholder.getTodos()
             .then((response) => setTodos(response.data))
             .catch((e) => {
                 e.response.status !== 200 && setError(`Error number ${e.response.status}`)

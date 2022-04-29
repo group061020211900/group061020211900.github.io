@@ -31,6 +31,9 @@ export const JSONPlaceholder = {
     },
     postPost(body){
         return instance.post(Endpoints.POSTS, body)
+    },
+    getTodos(){
+        return instance.get(Endpoints.TODOS)
     }
     // getUsersToken(token){
     //     return tokenInstance(token).get(Endpoints.POSTS)
