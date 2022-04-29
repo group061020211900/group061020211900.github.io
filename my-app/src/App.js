@@ -20,6 +20,8 @@ import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushI
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
 import { VitrikushJsonAxios } from "./pages/VitrikushIhorPage/JsonAxios/VitrikushJsonAxios";
 import "./App.css";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 // import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 // import ProtectedRoute from "./common/HOC/PrivateRoute";
@@ -88,9 +90,11 @@ const App = () => {
 };
 
 const AppContainer = () => (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
 
 export default AppContainer;
