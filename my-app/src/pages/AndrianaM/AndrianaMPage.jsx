@@ -12,6 +12,7 @@ const AndrianaMPage = () => {
                 <Link className={s.link} to={RouteConst.MAIN}>Home</Link>
                 <Link className={s.link} to={RouteConst.ANDRIANA_FORM}>Form</Link>
                 <Link className={s.link} to={RouteConst.ANDRIANA_INFO}>About</Link>
+                <Link className={s.link} to={RouteConst.ANDRIANA_AXIOS}>Axios</Link>
             </div>
         </div>
     )

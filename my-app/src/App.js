@@ -16,6 +16,7 @@ import { VitrikushIhorForm } from './pages/VitrikushIhorPage/FormIhor/VitrikushI
 import VasylPage from './pages/VasylPage/VasylPage';
 import AndrianaForm from './pages/AndrianaM/AndrianaForm/AndrianaForm';
 import AndrianaInfo from './pages/AndrianaM/AndrianaInfo/AndrianaInfo';
+import AndrianaAxios from './pages/AndrianaM/AndrianaAxios/AndrianaAxios';
 
 
 
@@ -61,6 +62,7 @@ const App = () => {
                 <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
                 <Route path={RouteConst.ANDRIANA_FORM} element={<AndrianaForm />} />
                 <Route path={RouteConst.ANDRIANA_INFO} element={<AndrianaInfo />} />
+                <Route path={RouteConst.ANDRIANA_AXIOS} element={<AndrianaAxios />} />
                 <Route path={RouteConst.Volodia} element={<PageVolodia />} />
                 <Route
                     path="*"

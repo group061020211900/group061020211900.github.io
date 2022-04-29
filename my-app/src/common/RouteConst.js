@@ -7,6 +7,7 @@ export const RouteConst={
     ANDRIANA_M: "/anjoanka",
     ANDRIANA_FORM: "/anjoanka/form",
     ANDRIANA_INFO: "/anjoanka/about",
+    ANDRIANA_AXIOS: "/anjoanka/axios",
     DANYLO: "/danylo",
     ADMIN: "/admin",
     IhorKurylov: "/IhorKurylov",

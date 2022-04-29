@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import 'rsuite/dist/rsuite.min.css';
 import { Form, Button, ButtonToolbar, Input } from 'rsuite';
 import { RouteConst } from "../../../common/RouteConst";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import s from "./AndrianaForm.module.css"
 
 
@@ -19,7 +19,18 @@ const AndrianaForm = () => {
         console.log(formValue)
     }, [formValue]);
 
-    const Textarea = React.forwardRef((props, ref) => <Input {...props} as="textarea" ref={ref} />);
+    const reset = () =>{
+       setFormValue({
+           ...formValue,
+           name: "",
+           email: "",
+           password: "",
+           textarea: ""
+       })
+       
+    }
+
+   
     return (
         <div>
             <h1>Andriana Mykolaievych</h1>
@@ -65,7 +76,7 @@ const AndrianaForm = () => {
                 <Form.Group>
                     <ButtonToolbar>
                         <Button appearance="primary">Submit</Button>
-                        <Button appearance="default">Cancel</Button>
+                        <Button appearance="default" onClick={reset}>Cancel</Button>
                     </ButtonToolbar>
                 </Form.Group>
             </Form>
