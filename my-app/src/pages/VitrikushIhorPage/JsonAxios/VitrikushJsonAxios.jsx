@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
 import { JSONPlaceholder } from "../../../api/api";
-
 import { JsonPost } from "./JsonPost";
+import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
+
 
 export const VitrikushJsonAxios = () => {
 
@@ -11,7 +11,6 @@ export const VitrikushJsonAxios = () => {
 			.then((response) =>
 				localStorage.setItem("posts", JSON.stringify(response.data))
 			)
-			.finally(() => console.log("finally"));
 	}, []);
 
 	const getUserPost = async () => {
@@ -25,15 +24,12 @@ export const VitrikushJsonAxios = () => {
 		} catch (err) {
 			console.log(err);
 		}
-		finally {
-			console.log("finally")
-		}
 	}
 
 	useEffect(() => {
 		setTimeout(() => {
 			getUserPost();
-		}, 3000);
+		}, 8000);
 	}, []);
 
 	return (

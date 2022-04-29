@@ -1,6 +1,8 @@
-import { forwardRef, useRef, useState } from 'react'
+import { forwardRef, useRef, useState } from 'react';
+import { useDispatch } from "react-redux";
 import { Form, Schema, Button, ButtonToolbar, } from 'rsuite';
 import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
+import { VitrikushAction } from "../../../redux/actions/VitrikushAction";
 
 const { StringType } = Schema.Types;
 
@@ -31,6 +33,8 @@ const TextField = forwardRef((props, ref) => {
 });
 
 export const VitrikushIhorForm = () => {
+
+	const dispatch = useDispatch();
 	const formRef = useRef();
 	const [formValue, setFormValue] = useState({
 		name: '',
@@ -43,6 +47,7 @@ export const VitrikushIhorForm = () => {
 		if (!formRef.current.check()) {
 			return;
 		}
+		dispatch(VitrikushAction.setLogin(formValue));
 	};
 
 	return (
@@ -59,8 +64,8 @@ export const VitrikushIhorForm = () => {
 					placeholder="Enter your name" />
 				<TextField name="email" label="Email"
 					placeholder="Enter your email" />
-				<TextField name="password" label="Password" type="password" autoComplete="off" 
-					placeholder="Enter your password"/>
+				<TextField name="password" label="Password" type="password" autoComplete="off"
+					placeholder="Enter your password" />
 				<TextField
 					name="verifyPassword"
 					label="Verify password"
