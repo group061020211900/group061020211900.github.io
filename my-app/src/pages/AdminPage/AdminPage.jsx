@@ -30,51 +30,53 @@ const IhorKurylovPage = () => {
 
     return (
         <div className={styles.container}>
-            <h1 onClick={()=> navigate(RouteConst.NOT_FOUND_PAGE)}>Ihor Kurylov</h1>
-            <Outlet />
 
-            <form>
-                <label>
-                    Ім'я:
-                    <input
-                        type="text"
-                        value={formValue.name}
-                        onChange={(e)=> setFormValue({
-                            ...formValue,
-                            name: e.target.value
-                        })}
-                    />
-                </label>
-                <label>
-                    Пароль:
-                    <input
-                        type="text"
-                        value={formValue.passWord}
-                        onChange={(e)=> setFormValue({
-                            ...formValue,
-                            passWord: e.target.value
-                        })}
-                    />
-                </label>
-                <label>
-                    Дата:
-                    <input
-                        type="date"
-                        value={formValue.date}
-                        onChange={(e)=> setFormValue({
-                            ...formValue,
-                            date: e.target.value
-                        })}
-                    />
-                </label>
-                <button type="reset" onClick={()=> setFormValue({
-                    name: "",
-                    passWord: "",
-                    date: ""
-                })}>Reset</button>
-                <button onClick={handleSubmit}>Submit</button>
-            </form>
-            <LoginFrom />
+
+            {/*<h1 onClick={()=> navigate(RouteConst.NOT_FOUND_PAGE)}>Ihor Kurylov</h1>*/}
+            {/*<Outlet />*/}
+
+            {/*<form>*/}
+            {/*    <label>*/}
+            {/*        Ім'я:*/}
+            {/*        <input*/}
+            {/*            type="text"*/}
+            {/*            value={formValue.name}*/}
+            {/*            onChange={(e)=> setFormValue({*/}
+            {/*                ...formValue,*/}
+            {/*                name: e.target.value*/}
+            {/*            })}*/}
+            {/*        />*/}
+            {/*    </label>*/}
+            {/*    <label>*/}
+            {/*        Пароль:*/}
+            {/*        <input*/}
+            {/*            type="text"*/}
+            {/*            value={formValue.passWord}*/}
+            {/*            onChange={(e)=> setFormValue({*/}
+            {/*                ...formValue,*/}
+            {/*                passWord: e.target.value*/}
+            {/*            })}*/}
+            {/*        />*/}
+            {/*    </label>*/}
+            {/*    <label>*/}
+            {/*        Дата:*/}
+            {/*        <input*/}
+            {/*            type="date"*/}
+            {/*            value={formValue.date}*/}
+            {/*            onChange={(e)=> setFormValue({*/}
+            {/*                ...formValue,*/}
+            {/*                date: e.target.value*/}
+            {/*            })}*/}
+            {/*        />*/}
+            {/*    </label>*/}
+            {/*    <button type="reset" onClick={()=> setFormValue({*/}
+            {/*        name: "",*/}
+            {/*        passWord: "",*/}
+            {/*        date: ""*/}
+            {/*    })}>Reset</button>*/}
+            {/*    <button onClick={handleSubmit}>Submit</button>*/}
+            {/*</form>*/}
+            {/*<LoginFrom />*/}
         </div>
     )
 }
