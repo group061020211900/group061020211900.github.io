@@ -1,5 +1,6 @@
 import { forwardRef, useRef, useState } from 'react'
 import { Form, Schema, Button, ButtonToolbar, } from 'rsuite';
+import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
 
 const { StringType } = Schema.Types;
 
@@ -46,7 +47,8 @@ export const VitrikushIhorForm = () => {
 
 	return (
 		<div>
-			<h2>VitrikushIhorForm</h2>
+			<div><RoutVitrikushIhorHome /></div>
+			<h2>Vitrikush Ihor Form</h2>
 			<Form
 				ref={formRef}
 				onChange={setFormValue}

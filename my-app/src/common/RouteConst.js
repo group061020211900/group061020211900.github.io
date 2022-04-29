@@ -1,20 +1,28 @@
-export const RouteConst={
-    MAIN: "/",
-    USERS: "users",
-    NOT_FOUND_PAGE: "/error",
-    USER_ID: ":userId",
-    MENTOR: "/",
-    ANDRIANA_M: "/anjoanka",
-    DANYLO: "/danylo",
-    ADMIN: "/admin",
-    IhorKurylov: "/IhorKurylov",
-    Vitrikush_Ihor: "/VitrikushIhor",
-    MARK: "/mark",
-    VASYLYATSISHIN: "/vasylyatsishin",
-    Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
+export const RouteConst = {
+  MAIN: "/",
+  ADMIN: "/admin",
+  USERS: "users",
+  NOT_FOUND_PAGE: "/error",
+  USER_ID: ":userId",
+  MENTOR: "/",
 
-}
+  ANDRIANA_M: "/anjoanka",
 
-export const IhorRoutes= {
-    LOGIN: "/login"
-}
+  DANYLO: "/danylo",
+
+  IhorKurylov: "/IhorKurylov",
+
+  MARK: "/mark",
+
+  VASYLYATSISHIN: "/vasylyatsishin",
+
+  Vitrikush_Ihor: "/VitrikushIhor",
+  Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
+  Vitrikush_Ihor_Axios: "/VitrikushIhor/axios",
+  Vitrikush_Ihor_Json_Axios: "/VitrikushIhor/jsonAxios",
+
+};
+
+export const IhorRoutes = {
+  LOGIN: "/login",
+};
