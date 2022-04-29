@@ -40,7 +40,7 @@ const App = () => {
 
                 <Route element={
                     <ProtectedRoute
-                        isAllowed={user.role.includes("admin")} 
+                        isAllowed={user.role.includes("admin")}
                         redirectPath={RouteConst.NOT_FOUND_PAGE}
                     />}
                 >
