@@ -1,5 +1,4 @@
-import "./App.css";
-import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
+import { useEffect } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -7,21 +6,23 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import NotFoundPage from "./pages/404/404";
 import { RouteConst } from "./common/RouteConst";
 import { showNavbar } from "./utils";
-import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
+import NotFoundPage from "./pages/404/404";
+import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
 import VasylPage from "./pages/VasylPage/VasylPage";
-import { useEffect } from "react";
 import MainPage from "./pages/Igor/IhorPage";
-// import IhorKurylovPage from "./pages/AdminPage/AdminPage";
-// import ProtectedRoute from "./common/HOC/PrivateRoute";
-import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
+import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
+import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
 import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
 import { VitrikushJsonAxios } from "./pages/VitrikushIhorPage/JsonAxios/VitrikushJsonAxios";
+import "./App.css";
+
+// import IhorKurylovPage from "./pages/AdminPage/AdminPage";
+// import ProtectedRoute from "./common/HOC/PrivateRoute";
 
 const App = () => {
   const path = useLocation().pathname;
