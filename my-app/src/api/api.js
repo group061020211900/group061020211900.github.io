@@ -20,7 +20,7 @@ const instance = axios.create({
 
 
 export const JSONPlaceholder = {
-    getUsers(){
+    getPost(){
         return instance.get(Endpoints.POSTS)
     },
     getPhotos() {
@@ -29,6 +29,9 @@ export const JSONPlaceholder = {
     getComments(){
         return instance.get(Endpoints.COMMENTS)
     },
+    postPost(body){
+        return instance.post(Endpoints.POSTS, body)
+    }
     // getUsersToken(token){
     //     return tokenInstance(token).get(Endpoints.POSTS)
     // }
