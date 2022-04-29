@@ -40,6 +40,8 @@ const DanyloPage = () => {
                     </div>
                     <button onClick={() => { navigate("/") }} className="backToMain">Go to the main page</button>
                     <button onClick={() => { navigate("/danylo/form") }} className="backToMain">Go to the form page</button>
+                    <button onClick={() => { navigate("/danylo/axios") }} className="backToMain">Go to the Axios page</button>
+
 
                 </div>
                 <div className="container">
