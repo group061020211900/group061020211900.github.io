@@ -19,10 +19,10 @@ import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
 import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
 import { VitrikushJsonAxios } from "./pages/VitrikushIhorPage/JsonAxios/VitrikushJsonAxios";
+import { VitrikushRegistered } from "./pages/VitrikushIhorPage/FormIhor/VitrikushRegistered";
 import "./App.css";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-
 // import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 // import ProtectedRoute from "./common/HOC/PrivateRoute";
 
@@ -62,7 +62,10 @@ const App = () => {
           path={RouteConst.Vitrikush_Ihor_Json_Axios}
           element={<VitrikushJsonAxios />}
         />
-
+        <Route
+          path={RouteConst.Vitrikush_Ihor_Registered}
+          element={<VitrikushRegistered />}
+        />
         {/*<Route element={*/}
         {/*    <ProtectedRoute*/}
         {/*        isAllowed={user.role.includes("admin")}*/}

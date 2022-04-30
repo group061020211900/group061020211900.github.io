@@ -20,6 +20,8 @@ export const RouteConst = {
   Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
   Vitrikush_Ihor_Axios: "/VitrikushIhor/axios",
   Vitrikush_Ihor_Json_Axios: "/VitrikushIhor/jsonAxios",
+  Vitrikush_Ihor_Registered: "/VitrikushIhor/registered",
+
 
 };
 
