@@ -1,12 +1,11 @@
 import './App.css';
-import NotFoundPage from "./pages/404/404";
 import { useEffect } from "react";
 import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
+    BrowserRouter,
+    Navigate,
+    Route,
+    Routes,
+    useLocation,
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -18,10 +17,7 @@ import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
 import DanyloForm from './pages/Danylo/DanyloForm';
 import DanyloAxios from './pages/Danylo/DanyloAxios';
-import { useEffect } from "react";
 import MainPage from "./pages/Igor/IhorPage";
-import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
-import ProtectedRoute from "./common/HOC/PrivateRoute";
 import PageVolodia from "./pages/Volodia/PageVolodia";
 import VasylPage from './pages/VasylPage/VasylPage';
 import AndrianaMPage from './pages/AndrianaM/AndrianaMPage';
@@ -40,63 +36,63 @@ import { ContainerButtonVitrikush } from "./pages/VitrikushIhorPage/ButtonDz/Con
 // import ProtectedRoute from "./common/HOC/PrivateRoute";
 
 const App = () => {
-  const path = useLocation().pathname;
-  // console.log(path);
-  useEffect(() => {
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        role: "admin",
-      })
-  );
-}, []);
+    const path = useLocation().pathname;
+    // console.log(path);
+    useEffect(() => {
+        localStorage.setItem(
+            "user",
+            JSON.stringify({
+                role: "admin",
+            })
+        );
+    }, []);
 
-const user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
-return (
-  <div className="App">
-    {showNavbar(path) && (
-      <div>
-        <h1>HEADER</h1>
-      </div>
-    )}
-    <Routes>
-      <Route path={RouteConst.MAIN} element={<MainPage />} />
-      <Route path={RouteConst.Vitrikush_Ihor} element={<VitrikushIhor />} />
-      <Route
-        path={RouteConst.Vitrikush_Ihor_FORM}
-        element={<VitrikushIhorForm />}
-      />
-      <Route
-        path={RouteConst.Vitrikush_Ihor_Axios}
-        element={<VitrikushIhorAxios />}
-      />
-      <Route
-        path={RouteConst.Vitrikush_Ihor_Json_Axios}
-        element={<VitrikushJsonAxios />}
-      />
-      <Route
-        path={RouteConst.Vitrikush_Ihor_Registered}
-        element={<VitrikushRegistered />}
-      />
-      <Route
-        path={RouteConst.Vitrikush_Ihor_Btn_Dz}
-        element={<ContainerButtonVitrikush />}
-      />
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    return (
+        <div className="App">
+            {showNavbar(path) && (
+                <div>
+                    <h1>HEADER</h1>
+                </div>
+            )}
+            <Routes>
+                <Route path={RouteConst.MAIN} element={<MainPage />} />
+                <Route path={RouteConst.Vitrikush_Ihor} element={<VitrikushIhor />} />
+                <Route
+                    path={RouteConst.Vitrikush_Ihor_FORM}
+                    element={<VitrikushIhorForm />}
+                />
+                <Route
+                    path={RouteConst.Vitrikush_Ihor_Axios}
+                    element={<VitrikushIhorAxios />}
+                />
+                <Route
+                    path={RouteConst.Vitrikush_Ihor_Json_Axios}
+                    element={<VitrikushJsonAxios />}
+                />
+                <Route
+                    path={RouteConst.Vitrikush_Ihor_Registered}
+                    element={<VitrikushRegistered />}
+                />
+                <Route
+                    path={RouteConst.Vitrikush_Ihor_Btn_Dz}
+                    element={<ContainerButtonVitrikush />}
+                />
 
-      {/*<Route element={*/}
-      {/*    <ProtectedRoute*/}
-      {/*        isAllowed={user.role.includes("admin")}*/}
-      {/*        redirectPath={RouteConst.NOT_FOUND_PAGE}*/}
-      {/*    />}*/}
-      {/*>*/}
-      {/*    <Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
-      {/*</Route>*/}
-      {/*<Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
-      <Route
-        path={RouteConst.IhorKurylov}
-        element={<IhorKurylovUsersPage />}
-      />
+                {/*<Route element={*/}
+                {/*    <ProtectedRoute*/}
+                {/*        isAllowed={user.role.includes("admin")}*/}
+                {/*        redirectPath={RouteConst.NOT_FOUND_PAGE}*/}
+                {/*    />}*/}
+                {/*>*/}
+                {/*    <Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
+                {/*</Route>*/}
+                {/*<Route path={RouteConst.IhorKurylov} element={<IhorKurylovPage />} />*/}
+                <Route
+                    path={RouteConst.IhorKurylov}
+                    element={<IhorKurylovUsersPage />}
+                />
 
 
                 {/*<Route path={`${RouteConst.IhorKurylov}/form`} element={<NotFoundPage />} />*/}
@@ -121,11 +117,11 @@ return (
 }
 
 const AppContainer = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
 );
 
 export default AppContainer;

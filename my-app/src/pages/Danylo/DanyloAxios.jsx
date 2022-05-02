@@ -48,4 +48,4 @@ const DanyloAxios = () => {
 };
 
 
-export default DanyloAxios
+export default DanyloAxios;
