@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { JSONPlaceholder } from "../../../api/api";
+import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
 import { PhotoItem } from "./PhotoItem";
+
 
 export const VitrikushIhorAxios = () => {
 	const [photos, setPhotos] = useState([]);
@@ -20,6 +22,7 @@ export const VitrikushIhorAxios = () => {
 
 	return (
 		<div>
+			<div><RoutVitrikushIhorHome /></div>
 			{photos?.length > 0 ? (
 				photos.map((photo, i) => (
 					<PhotoItem

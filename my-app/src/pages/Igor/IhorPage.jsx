@@ -2,9 +2,10 @@ import styles from "./IhorPage.module.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { RouteConst } from "../../common/RouteConst";
 import { useEffect, useState } from "react";
+import { UsersRouts } from "../../common/UsersRout/UsersRouts";
 
 const Counter = ({ decrease, increase, counter }) => {
-    console.log('Counter')
+  console.log("Counter");
   return (
     <div>
       <button onClick={decrease}> plus</button>
@@ -51,12 +52,19 @@ const MainPage = () => {
       <h1>Main page</h1>
       <Counter decrease={decrease} increase={increase} counter={counter} />
       <AnotherCounter divide={divide} multiple={multiple} counter={counter} />
-      <Link to={RouteConst.IhorKurylov}>Go to Mentors page</Link>
+
+      {/* <Link to={RouteConst.IhorKurylov}>Go to Mentors page</Link>
       <br />
+
       <Link to={RouteConst.MARK}>Go to {RouteConst.MARK} page</Link>
       <br />
       <Link to={RouteConst.ANDRIANA_M}>Go to Andriana's page</Link>
-      
+
+      <Link to={RouteConst.MARK}>Go to {RouteConst.MARK} page</Link> */}
+
+      <UsersRouts />
+
+
       {/*//TODO set redirects to your Route*/}
       {/*<h1 onClick={()=> navigate(RouteConst.NOT_FOUND_PAGE)}>IhorPage</h1>*/}
       {/*<h1 onClick={()=> setCount((prevState) => ++prevState )}>IhorPage count {count}</h1>*/}

@@ -1,4 +1,4 @@
-export const RouteConst={
+export const RouteConst = {
     MAIN: "/",
     USERS: "users",
     NOT_FOUND_PAGE: "/error",
@@ -13,12 +13,19 @@ export const RouteConst={
     IhorKurylov: "/IhorKurylov",
     VitrikushIhor: "/VitrikushIhor",
     MARK: "/mark",
-    Volodia:"/Volodia",
+    Volodia: "/Volodia",
     VASYLYATSISHIN: "/vasylyatsishin",
     Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
+    DANYLO_FORM: "/danylo/form",
+    DANYLO_AXIOS: "/danylo/axios",
+    Vitrikush_Ihor: "/VitrikushIhor",
+    Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
+    Vitrikush_Ihor_Axios: "/VitrikushIhor/axios",
+    Vitrikush_Ihor_Json_Axios: "/VitrikushIhor/jsonAxios",
+    Vitrikush_Ihor_Registered: "/VitrikushIhor/registered",
+    Vitrikush_Ihor_Btn_Dz: "/VitrikushIhor/btnDz",
+};
 
-}
-
-export const IhorRoutes= {
-    LOGIN: "/login"
-}
+export const IhorRoutes = {
+    LOGIN: "/login",
+};
