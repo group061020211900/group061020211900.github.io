@@ -9,7 +9,7 @@ const PageVolodia = () => {
     HTML: "100%",
     CSS: "100%",
     jS: "70%",
-    REACT: "40%",
+    REACT: "50%",
   };
   const me = {
     language: "Ukrainian,English",
