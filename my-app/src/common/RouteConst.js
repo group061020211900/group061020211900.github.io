@@ -9,6 +9,8 @@ export const RouteConst = {
   ANDRIANA_M: "/anjoanka",
 
   DANYLO: "/danylo",
+  DANYLO_FORM:"/danylo/form",
+  DANYLO_AXIOS: "/danylo/axios",
 
   IhorKurylov: "/IhorKurylov",
 
