@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 import { JSONPlaceholder } from "../../../api/api";
 import { logDOM } from "@testing-library/react";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsPosts } from "../../../redux/actions/actionsPosts";
+import { actionsPosts, getUsersPosts } from "../../../redux/actions/actionsPosts";
 
 const Posts = () => {
-  // const [posts, setPosts] = useState(JSON.parse(localStorage.getItem("posts")));
-  const posts = useSelector((state) => state.postsReducer.posts);
+  const posts = useSelector((state) => state?.postsReducer?.posts);
   useEffect(() => {
     console.log(posts);
   }, [posts]);
@@ -34,30 +33,31 @@ const PostItem = ({ post }) => (
 );
 
 const IhorKurylovUsersPage = () => {
-  // const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState();
   // const [error, setError] = useState("");
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state?.postsReducer?.isLoading);
+  const _getUsersPosts = () => dispatch(getUsersPosts());
+
 
   useEffect(() => {
-    JSONPlaceholder.getPost()
-      .then((response) => dispatch(actionsPosts.setPosts(response.data)))
-      .finally(() => console.log("finally"));
+    _getUsersPosts();
   }, []);
 
-  const getPOsts = async () => {
-    try {
-      const resp = await JSONPlaceholder.postPost({
-        title: "my post",
-        body: "my body",
-        userId: 1,
-      });
-      console.log("resp", resp.data);
-    } catch (e) {
-      console.log(e);
-    } finally {
-      console.log("finally");
-    }
-  };
+  // const getPOsts = async () => {
+  //   try {
+  //     const resp = await JSONPlaceholder.postPost({
+  //       title: "my post",
+  //       body: "my body",
+  //       userId: 1,
+  //     });
+  //     console.log("resp", resp.data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   } finally {
+  //     console.log("finally");
+  //   }
+  // };
 
   // useEffect( () => {
   //   setTimeout(() => {
@@ -68,7 +68,7 @@ const IhorKurylovUsersPage = () => {
   return (
     <div className={styles.container}>
       <h1>USERS</h1>
-      <Posts />
+      {isLoading ? <h1>Loading....</h1> : <Posts />}
     </div>
   );
 };

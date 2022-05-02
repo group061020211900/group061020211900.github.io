@@ -18,8 +18,6 @@ import DanyloPage from "./pages/Danylo/DanyloPage";
 import DanyloForm from './pages/Danylo/DanyloForm';
 import DanyloAxios from './pages/Danylo/DanyloAxios';
 import VasylPage from './pages/VasylPage/VasylPage';
-import { useEffect } from "react";
-import VasylPage from "./pages/VasylPage/VasylPage";
 import MainPage from "./pages/Igor/IhorPage";
 import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
 import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
