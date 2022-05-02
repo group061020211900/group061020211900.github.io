@@ -26,6 +26,11 @@ export const VitrikushIhor = () => {
               Json Axios
             </Button>
           </Link>
+          <Link to={RouteConst.Vitrikush_Ihor_Btn_Dz}>
+            <Button color="yellow" appearance="primary">
+              Button Dz
+            </Button>
+          </Link>
         </ButtonToolbar>
       </div>
       <div className={style.homePage}>

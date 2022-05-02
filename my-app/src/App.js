@@ -6,6 +6,9 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 import { RouteConst } from "./common/RouteConst";
 import { showNavbar } from "./utils";
 import NotFoundPage from "./pages/404/404";
@@ -20,9 +23,9 @@ import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushI
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
 import { VitrikushJsonAxios } from "./pages/VitrikushIhorPage/JsonAxios/VitrikushJsonAxios";
 import { VitrikushRegistered } from "./pages/VitrikushIhorPage/FormIhor/VitrikushRegistered";
+import { ContainerButtonVitrikush } from "./pages/VitrikushIhorPage/ButtonDz/ContainerButtonVitrikush";
 import "./App.css";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+
 // import IhorKurylovPage from "./pages/AdminPage/AdminPage";
 // import ProtectedRoute from "./common/HOC/PrivateRoute";
 
@@ -66,6 +69,11 @@ const App = () => {
           path={RouteConst.Vitrikush_Ihor_Registered}
           element={<VitrikushRegistered />}
         />
+        <Route
+          path={RouteConst.Vitrikush_Ihor_Btn_Dz}
+          element={<ContainerButtonVitrikush />}
+        />
+
         {/*<Route element={*/}
         {/*    <ProtectedRoute*/}
         {/*        isAllowed={user.role.includes("admin")}*/}

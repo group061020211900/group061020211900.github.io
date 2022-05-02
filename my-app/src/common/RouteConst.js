@@ -21,8 +21,7 @@ export const RouteConst = {
   Vitrikush_Ihor_Axios: "/VitrikushIhor/axios",
   Vitrikush_Ihor_Json_Axios: "/VitrikushIhor/jsonAxios",
   Vitrikush_Ihor_Registered: "/VitrikushIhor/registered",
-
-
+  Vitrikush_Ihor_Btn_Dz: "/VitrikushIhor/btnDz",
 };
 
 export const IhorRoutes = {
