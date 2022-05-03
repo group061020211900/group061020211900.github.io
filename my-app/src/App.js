@@ -15,13 +15,14 @@ import NotFoundPage from "./pages/404/404";
 import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
-import DanyloForm from './pages/Danylo/DanyloForm';
-import DanyloAxios from './pages/Danylo/DanyloAxios';
-import VasylPage from './pages/VasylPage/VasylPage';
+import DanyloForm from "./pages/Danylo/DanyloForm";
+import DanyloAxios from "./pages/Danylo/DanyloAxios";
+import VasylPage from "./pages/VasylPage/VasylPage";
 import { useEffect } from "react";
 import VasylPage from "./pages/VasylPage/VasylPage";
 import MainPage from "./pages/Igor/IhorPage";
 import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
+import PageVolodia from "./pages/Volodia/pageVolodia";
 import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
 import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
@@ -98,6 +99,7 @@ const App = () => {
         <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
         <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
         <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
+        <Route path={RouteConst.Volodia} element={<PageVolodia />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
       </Routes>
     </div>
