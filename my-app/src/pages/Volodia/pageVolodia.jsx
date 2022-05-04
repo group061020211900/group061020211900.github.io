@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "../Volodia/PageVolodia.module.css";
 import FormControl from "./form/FormControl";
+import AxiosVolodia from "./AxiosVolodia/AxiosVolodia"
+import { RouteConst } from "../../common/RouteConst";
+import { Button,ButtonToolbar } from "rsuite";
 
 const PageVolodia = () => {
   const navigate = useNavigate();
@@ -20,7 +24,15 @@ const PageVolodia = () => {
   return (
     <div className={styles.Conteiner}>
       <h1 className={styles.h1}>Front-end developer</h1>
+
       <FormControl />
+        <ButtonToolbar>
+        <Link to={RouteConst.AxiosVolodia}>
+            <Button color="red"  appearance="primary">
+                Axios
+            </Button>
+        </Link>
+            </ButtonToolbar>
       <div className={styles.block1}>
         <div className={styles.skills}>
           <ul>

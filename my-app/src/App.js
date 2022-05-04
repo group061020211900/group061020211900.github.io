@@ -16,11 +16,13 @@ import IhorKurylovUsersPage from "./pages/AdminPage/Users/IhorKurylovUsersPage";
 import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
 import PageVolodia from "./pages/Volodia/pageVolodia";
+import AxiosVolodia from "./pages/Volodia/AxiosVolodia/AxiosVolodia";
 import DanyloForm from "./pages/Danylo/DanyloForm";
 import DanyloAxios from "./pages/Danylo/DanyloAxios";
 import VasylPage from "./pages/VasylPage/VasylPage";
-import { useEffect } from "react";
-import VasylPage from './pages/VasylPage/VasylPage';
+
+//*import { useEffect } from "react";
+//import VasylPage from "./pages/VasylPage/VasylPage";
 import MainPage from "./pages/Igor/IhorPage";
 import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
 import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
@@ -70,6 +72,11 @@ const App = () => {
           path={RouteConst.Vitrikush_Ihor_Json_Axios}
           element={<VitrikushJsonAxios />}
         />
+        <Route
+            path={RouteConst.AxiosVolodia}
+            element={<AxiosVolodia />}
+        />
+
         <Route
           path={RouteConst.Vitrikush_Ihor_Registered}
           element={<VitrikushRegistered />}

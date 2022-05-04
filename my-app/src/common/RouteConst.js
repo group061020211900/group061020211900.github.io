@@ -16,7 +16,7 @@ export const RouteConst = {
 
   MARK: "/mark",
   Volodia: "/Volodia",
-
+  AxiosVolodia:"/AxiosVolodia",
   VASYLYATSISHIN: "/vasylyatsishin",
 
   Vitrikush_Ihor: "/VitrikushIhor",
