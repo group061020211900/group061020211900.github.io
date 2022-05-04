@@ -41,8 +41,7 @@ const DanyloPage = () => {
                     <button onClick={() => { navigate("/") }} className="backToMain">Go to the main page</button>
                     <button onClick={() => { navigate("/danylo/form") }} className="backToMain">Go to the form page</button>
                     <button onClick={() => { navigate("/danylo/axios") }} className="backToMain">Go to the Axios page</button>
-
-
+                    <button onClick={() => { navigate("/danylo/axios/json") }} className="backToMain">Go to the Axios page</button>
                 </div>
                 <div className="container">
                     <div className="bird-container bird-container--one">

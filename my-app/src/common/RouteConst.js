@@ -11,6 +11,7 @@ export const RouteConst = {
   DANYLO: "/danylo",
   DANYLO_FORM:"/danylo/form",
   DANYLO_AXIOS: "/danylo/axios",
+  DANYLO_AXIOS_JSON: "/danylo/axios/json",
 
   IhorKurylov: "/IhorKurylov",
 
