@@ -20,6 +20,7 @@ import DanyloAxios from './pages/Danylo/DanyloAxios';
 import VasylPage from './pages/VasylPage/VasylPage';
 import MainPage from "./pages/Igor/IhorPage";
 import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
+import VasylForm from "./pages/VasylPage/VasylForm"
 import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
 import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
@@ -97,6 +98,7 @@ return (
       <Route path={RouteConst.DANYLO_FORM} element={<DanyloForm />} />
       <Route path={RouteConst.DANYLO_AXIOS} element={<DanyloAxios />} />
       <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
+      <Route path={RouteConst.VASYLYATSISHIN_FORM} element={<VasylForm />} />
       <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
       <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
     </Routes>

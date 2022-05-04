@@ -17,6 +17,7 @@ export const RouteConst = {
   MARK: "/mark",
 
   VASYLYATSISHIN: "/vasylyatsishin",
+  VASYLYATSISHIN_FORM: "/vasylyatsishin/form",
 
   Vitrikush_Ihor: "/VitrikushIhor",
   Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
