@@ -3,13 +3,16 @@ import { RouteConst } from '../../../common/RouteConst';
 import { JSONPlaceholder } from "../../../api/api";
 import { Link } from "react-router-dom";
 import s from "./AndrianaAxios.module.css";
-import "bootstrap/dist/css/bootstrap.min.css"
+import { Loader } from 'rsuite';
 
 const TodoItem = ({ todo }) => (
-    <li className="list-group-item d-flex justify-content-between align-items-center">
-        {todo.title}
-        <input type="checkbox" checked={todo.completed} />
-    </li>
+    <div>
+        <div>
+            {todo.title}
+            <input type="checkbox" checked={todo.completed} />
+        </div>
+        <hr />
+    </div>
 )
 
 
@@ -32,17 +35,12 @@ const AndrianaAxios = () => {
             <h1>USERS</h1>
             <Link className={s.backLink} to={RouteConst.ANDRIANA_M}>back</Link>
             {todos?.length > 0
-                ? todos.map(todos =><ul className="list-group"><TodoItem todo={todos} /></ul>)
+                ? todos.map(todos => <TodoItem todo={todos} />)
                 : error !== ""
                     ? <h3>{error}</h3>
-                    : <div class="d-flex justify-content-center">
-                    <div class="spinner-border" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                  </div>}
-
-           
-        </div>
+                    :   <Loader content="Loading..." vertical />
+                    }
+            </div>
     )
 }
 

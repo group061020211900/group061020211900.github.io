@@ -21,6 +21,13 @@ export const UsersRouts = () => {
 				</Button>
 			</Link>
 
+			<Link to={RouteConst.ANDRIANA_M}>
+				<Button color="orange" appearance="primary">
+					Go to Andriana's page
+				</Button>
+			</Link>
+
+
 			<RoutVitrikushIhorHome />
 
 		</ButtonToolbar>
