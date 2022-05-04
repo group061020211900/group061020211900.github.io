@@ -17,6 +17,7 @@ import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
 import DanyloForm from './pages/Danylo/DanyloForm';
 import DanyloAxios from './pages/Danylo/DanyloAxios';
+import DanyloAxiosJSON from "./pages/Danylo/DanyloAxiosJSON";
 import VasylPage from './pages/VasylPage/VasylPage';
 import MainPage from "./pages/Igor/IhorPage";
 import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
@@ -96,6 +97,7 @@ return (
       <Route path={RouteConst.DANYLO} element={<DanyloPage />} />
       <Route path={RouteConst.DANYLO_FORM} element={<DanyloForm />} />
       <Route path={RouteConst.DANYLO_AXIOS} element={<DanyloAxios />} />
+      <Route path={RouteConst.DANYLO_AXIOS_JSON} element={<DanyloAxiosJSON />} />
       <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
       <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
       <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
