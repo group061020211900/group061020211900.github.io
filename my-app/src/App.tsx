@@ -38,7 +38,8 @@ import "./App.css";
 // import ProtectedRoute from "./common/HOC/PrivateRoute";
 
 const App = () => {
-  const path = useLocation().pathname;
+  const path: string = useLocation().pathname;
+
   // console.log(path);
   useEffect(() => {
     localStorage.setItem(
@@ -49,7 +50,7 @@ const App = () => {
     );
   }, []);
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user") || '{}');
   console.log(user);
   return (
     <div className="App">
