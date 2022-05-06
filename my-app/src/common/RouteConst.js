@@ -19,6 +19,7 @@ export const RouteConst = {
   Volodia: "/Volodia",
   AxiosVolodia:"/AxiosVolodia",
   VASYLYATSISHIN: "/vasylyatsishin",
+  VASYLYATSISHIN_FORM: "/vasylyatsishin/form",
 
   Vitrikush_Ihor: "/VitrikushIhor",
   Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
