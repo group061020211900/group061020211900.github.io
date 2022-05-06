@@ -6,14 +6,17 @@ import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 
 const rootReducer = combineReducers({
   postsReducer: postsReducer,
+  // @ts-ignore
   VitrikushReducer,
 })
 
 type RootReducerType = typeof rootReducer;
 // (globalState: AppStateType) => AppStateType
-export type AppStateType = ReturnType<RootReducerType>
+export type AppStateType = ReturnType<RootReducerType> //type of our store
 
-
+export type PropertiesTypes<T> = T extends { [key: string]: infer U }
+  ? U
+  : never;
 
 const composeEnhancers = composeWithDevTools({
   trace: true,

@@ -4,6 +4,8 @@ import { JSONPlaceholder } from "../../../api/api";
 import { logDOM } from "@testing-library/react";
 import { useDispatch, useSelector } from "react-redux";
 import { actionsPosts, getUsersPosts } from "../../../redux/actions/actionsPosts";
+import { Post } from "../../../common/appTypes";
+import { AppStateType } from "../../../redux/store";
 
 const Posts = () => {
   // @ts-ignore
@@ -25,12 +27,7 @@ const Posts = () => {
   );
 };
 
-interface Post {
-  title: string
-  userId: number
-  body: string
-  id: number
-}
+
 
 interface Props {
   post: Post,
@@ -52,8 +49,7 @@ const IhorKurylovUsersPage = () => {
   const [posts, setPosts] = useState<Post[]>();
   // const [error, setError] = useState("");
   const dispatch = useDispatch();
-  // @ts-ignore
-  const isLoading: boolean = useSelector((state) => state?.postsReducer?.isLoading);
+  const isLoading: boolean = useSelector((state: AppStateType) => state?.postsReducer?.isLoading);
   // @ts-ignore
   const _getUsersPosts = () => dispatch(getUsersPosts());
 

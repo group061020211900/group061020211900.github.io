@@ -1,6 +1,7 @@
 import { actionTypes } from "../actions/actionsPosts";
+import { PostReducerActionTypes, PostsReducerTypes } from "../../common/appTypes";
 
-const initialState = {
+const initialState: PostsReducerTypes = {
   posts: [],
   isLoading: false,
   morePosts: [1, 2, 3],
@@ -8,14 +9,13 @@ const initialState = {
 
 const postsReducer = (
   state = initialState,
-  action
-  // action: { type: "SET_POSTS", payload: [] }
+  action: PostReducerActionTypes
 ) => {
   switch (action.type) {
     case actionTypes.SET_POSTS:
       return {
         ...state,
-        posts: action.payload,
+        posts: action.posts,
       };
     case actionTypes.SET_IS_LOADING:
       return {
