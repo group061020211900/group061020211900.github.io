@@ -1,4 +1,6 @@
-export const PhotoItem = ({ title, thumbnailUrl }) => {
+import { Photo } from "./VitrikushIhorAxios";
+
+export const PhotoItem = ({ title, thumbnailUrl }: Photo) => {
 	return (
 		<div>
 			<h3>{title}</h3>

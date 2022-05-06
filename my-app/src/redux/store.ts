@@ -9,6 +9,12 @@ const rootReducer = combineReducers({
   VitrikushReducer,
 })
 
+type RootReducerType = typeof rootReducer;
+// (globalState: AppStateType) => AppStateType
+export type AppStateType = ReturnType<RootReducerType>
+
+
+
 const composeEnhancers = composeWithDevTools({
   trace: true,
   traceLimit: 25,
