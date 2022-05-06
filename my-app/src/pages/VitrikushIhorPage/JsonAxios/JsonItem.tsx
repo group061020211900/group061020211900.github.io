@@ -1,4 +1,6 @@
-export const JsonItem = ({ post }) => {
+
+
+export const JsonItem = ({ post }:any) => {
   return (
     <div>
       <p>{post.title}</p>
