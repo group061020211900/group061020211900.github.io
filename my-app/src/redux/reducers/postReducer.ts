@@ -1,4 +1,4 @@
-import { actionTypes } from "../actions/actionsPosts";
+import { actionTypes } from "../../common/appTypes";
 import { PostReducerActionTypes, PostsReducerTypes } from "../../common/appTypes";
 
 const initialState: PostsReducerTypes = {
