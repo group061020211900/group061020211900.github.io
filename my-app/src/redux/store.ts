@@ -1,7 +1,7 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import postsReducer from "./reducers/postReducer";
-import { DanyloReducer } from "../pages/Danylo/DanyloReducer";
+import DanyloReducer from "../pages/Danylo/DanyloReducer";
 import { VitrikushReducer } from "./reducers/VitrikushReducer";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 

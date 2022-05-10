@@ -1,7 +1,9 @@
 import { AppStateType } from "../../redux/store";
 
-export const DanyloSelector = {
+const DanyloSelector = {
   getLogin: (state: AppStateType) => {
-    return state.DanyloReducer.login
+    return state.DanyloReducer.login;
   },
 };
+
+export default DanyloSelector

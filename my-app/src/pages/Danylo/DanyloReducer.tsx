@@ -1,37 +1,36 @@
-export const DanyloReducer = (state: initialStateType = initialState, action: ActionsTypes) => {
+import { actionTypes, TypeLogin } from "../../common/appTypes";
+import { PropertiesTypes } from "../../redux/store";
+
+
+const initialState = {
+    login: {
+        email: "",
+        name: "",
+        password: "",
+        verifyPassword: "",
+    },
+};
+
+type initialStateType = typeof initialState;
+
+type ActionsTypes = ReturnType<PropertiesTypes<typeof actions>>
+
+export const actions = {
+    setLogin: (login: TypeLogin) => ({ type: actionTypes.DANYLO_SET_LOGIN, payload: login } as const),
+};
+
+const DanyloReducer = (state: initialStateType = initialState, action: ActionsTypes) => {
     switch (action.type) {
-        case "DANYLO/SET_LOGIN":
+        case actionTypes.DANYLO_SET_LOGIN:
             return {
                 ...state,
-                login: action.payload
+                login: action.payload,
             };
         default:
             return state;
     }
 };
 
-export const initialState = {
-    login: {
-        email: "",
-        nickname: "",
-        password: ""
-    }
-};
+export default DanyloReducer
 
-export const actions = {
-    setLogin: (login: TypeLogin) => ({
-        type: "DANYLO/SET_LOGIN",
-        payload: login
-    })
-};
 
-type initialStateType = typeof initialState;
-type InferActionsTypes<T> = T extends {
-    [keys: string]: (...args: any[]) => infer U
-} ? U : never;
-type ActionsTypes = InferActionsTypes<typeof actions>;
-interface TypeLogin {
-    email: string,
-    nickname: string,
-    password: string
-}
