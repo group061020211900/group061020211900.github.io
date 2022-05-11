@@ -1,12 +1,14 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import postsReducer from "./reducers/postReducer";
+import DanyloReducer from "../pages/Danylo/DanyloReducer";
 import { VitrikushReducer } from "./reducers/VitrikushReducer";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 
 const rootReducer = combineReducers({
   postsReducer: postsReducer,
   VitrikushReducer,
+  DanyloReducer,
 })
 
 type RootReducerType = typeof rootReducer;
