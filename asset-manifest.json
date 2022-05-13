@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/https,://group061020211900.github.io/static/css/main.012b016b.css",
+    "main.js": "/https,://group061020211900.github.io/static/js/main.6596e8cb.js",
+    "static/media/index.less": "/https,://group061020211900.github.io/static/media/index.2979fe4ba4a7f3287586.less",
+    "index.html": "/https,://group061020211900.github.io/index.html",
+    "main.012b016b.css.map": "/https,://group061020211900.github.io/static/css/main.012b016b.css.map",
+    "main.6596e8cb.js.map": "/https,://group061020211900.github.io/static/js/main.6596e8cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.012b016b.css",
+    "static/js/main.6596e8cb.js"
+  ]
+}
