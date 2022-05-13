@@ -3,6 +3,9 @@ import {useEffect, useState} from "react";
 import { onSnapshot, collection } from "firebase/firestore"
 import db from "../../../firebase"
 import {addInfo, deleteInfo, editItem, getMyInfo, uploadFile} from "../../../api/firebaseCalls";
+import {getInfo} from "../../../redux/actions/actionsPosts";
+import {useDispatch, useSelector} from "react-redux";
+import {Info} from "../../../common/appTypes";
 
 export interface MyInfo {
   age: number
@@ -21,10 +24,15 @@ const newInfo =  {
 }
 
 const IhorKurylovUsersPage = () => {
-  const [myInfo, setMyInfo] = useState<MyInfo[]>([]);
+  const dispatch = useDispatch();
+  // const [myInfo, setMyInfo] = useState<MyInfo[]>([]);
   const [imageURL, setImageURL] = useState<string>();
+  // @ts-ignore
+  const myInfo = useSelector((state => state.postsReducer.info));
+  // @ts-ignore
+  const getInfoThunk = () => dispatch(getInfo());
   useEffect(() => {
-    getMyInfo(setMyInfo)
+    getInfoThunk();
   }, []);
 const handleUpload = (e:any) =>{
   e.preventDefault();
@@ -43,8 +51,7 @@ const handleUpload = (e:any) =>{
       <button
       onClick={() => addInfo(newInfo)}
       >ADDDD</button>
-      {myInfo?.map((item, index) => {
-        console.log(item)
+      {myInfo?.map((item: Info, index: number) => {
       return (
         <div
           key={index}

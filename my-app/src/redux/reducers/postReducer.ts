@@ -15,12 +15,20 @@ const postsReducer = (
     case actionTypes.SET_POSTS:
       return {
         ...state,
+        //@ts-ignore
         posts: action.posts,
       };
     case actionTypes.SET_IS_LOADING:
       return {
         ...state,
+        //@ts-ignore
         isLoading: action.isLoading,
+      };
+    case actionTypes.SET_MY_INFO:
+      return {
+        ...state,
+        //@ts-ignore
+        info: action.info,
       };
     default:
       return state;
