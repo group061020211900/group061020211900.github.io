@@ -7,22 +7,33 @@ import {
     Outlet,
 } from "react-router-dom";
 import LoginFrom from "../Igor/form/LoginnForm";
+interface FormValue {
+    name: string,
+    passWord: string,
+    date: string
+}
 
+interface SuperForm extends FormValue {
+    key: number
+}
 
 const IhorKurylovPage = () => {
     const navigate = useNavigate();
     // const { userId } = useParams();
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         console.log(formValue);
     }
-    const [formValue, setFormValue] = useState({
+    const [formValue, setFormValue] = useState<FormValue | SuperForm>({
         name: "",
         passWord: "",
-        date: ""
+        date: "",
+        key: 12,
     })
+
+    const [isAdmin, setIsAdmin] = useState<boolean>(true);
 
     // useEffect(()=>{
     //     console.log(formValue);
