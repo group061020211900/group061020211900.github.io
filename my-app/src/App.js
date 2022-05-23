@@ -17,13 +17,15 @@ import MarkPage from "./pages/Mark/MarkPage";
 import DanyloPage from "./pages/Danylo/DanyloPage";
 import DanyloForm from './pages/Danylo/DanyloForm';
 import DanyloAxios from './pages/Danylo/DanyloAxios';
-import MainPage from "./pages/Igor/IhorPage";
 import PageVolodia from "./pages/Volodia/PageVolodia";
-import VasylPage from './pages/VasylPage/VasylPage';
 import AndrianaMPage from './pages/AndrianaM/AndrianaMPage';
 import AndrianaForm from './pages/AndrianaM/AndrianaForm/AndrianaForm';
 import AndrianaInfo from './pages/AndrianaM/AndrianaInfo/AndrianaInfo';
 import AndrianaAxios from './pages/AndrianaM/AndrianaAxios/AndrianaAxios';
+import VasylPage from './pages/VasylPage/VasylPage';
+import MainPage from "./pages/Igor/IhorPage";
+import AndrianaMPage from "./pages/AndrianaM/AndrianaMPage";
+import VasylForm from "./pages/VasylPage/VasylForm";
 import { VitrikushIhor } from "./pages/VitrikushIhorPage/VitrikushIhor";
 import { VitrikushIhorForm } from "./pages/VitrikushIhorPage/FormIhor/VitrikushIhorForm";
 import { VitrikushIhorAxios } from "./pages/VitrikushIhorPage/AxiosIhor/VitrikushIhorAxios";
@@ -36,6 +38,8 @@ import { ContainerButtonVitrikush } from "./pages/VitrikushIhorPage/ButtonDz/Con
 // import ProtectedRoute from "./common/HOC/PrivateRoute";
 
 const App = () => {
+
+
     const path = useLocation().pathname;
     // console.log(path);
     useEffect(() => {
@@ -94,7 +98,6 @@ const App = () => {
                     element={<IhorKurylovUsersPage />}
                 />
 
-
                 {/*<Route path={`${RouteConst.IhorKurylov}/form`} element={<NotFoundPage />} />*/}
                 <Route path={RouteConst.MARK} element={<MarkPage />} />
                 <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
@@ -102,19 +105,16 @@ const App = () => {
                 <Route path={RouteConst.DANYLO_FORM} element={<DanyloForm />} />
                 <Route path={RouteConst.DANYLO_AXIOS} element={<DanyloAxios />} />
                 <Route path={RouteConst.VASYLYATSISHIN} element={<VasylPage />} />
+                <Route path={RouteConst.VASYLYATSISHIN_FORM} element={<VasylForm />} />
                 <Route path={RouteConst.ANDRIANA_M} element={<AndrianaMPage />} />
                 <Route path={RouteConst.ANDRIANA_FORM} element={<AndrianaForm />} />
                 <Route path={RouteConst.ANDRIANA_INFO} element={<AndrianaInfo />} />
                 <Route path={RouteConst.ANDRIANA_AXIOS} element={<AndrianaAxios />} />
-                <Route path={RouteConst.Volodia} element={<PageVolodia />} />
-                <Route
-                    path="*"
-                    element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />}
-                />
+                <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
             </Routes>
         </div>
     );
-}
+};
 
 const AppContainer = () => (
     <Provider store={store}>

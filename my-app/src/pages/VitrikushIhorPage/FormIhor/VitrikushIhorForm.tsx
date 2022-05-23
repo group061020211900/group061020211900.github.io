@@ -2,9 +2,13 @@ import { forwardRef, useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Form, Schema, Button, ButtonToolbar } from "rsuite";
-import { VitrikushAction } from "../../../redux/actions/VitrikushAction";
+import { actions } from "../../../redux/reducers/VitrikushReducer";
 import { RouteConst } from "../../../common/RouteConst";
 import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
+
+
+
+
 
 const { StringType } = Schema.Types;
 
@@ -25,8 +29,9 @@ const model = Schema.Model({
 });
 
 const TextField = forwardRef((props, ref) => {
+  // @ts-ignore
   const { name, label, accepter, ...rest } = props;
-  return (
+  return (// @ts-ignore
     <Form.Group controlId={`${name}-4`} ref={ref}>
       <Form.ControlLabel>{label} </Form.ControlLabel>
       <Form.Control name={name} accepter={accepter} {...rest} />
@@ -41,7 +46,7 @@ export const VitrikushIhorForm = () => {
 
   const dispatch = useDispatch();
 
-  const formRef = useRef();
+  const formRef = useRef()as React.MutableRefObject<HTMLInputElement>;
 
   const [formValue, setFormValue] = useState({
     name: "",
@@ -50,11 +55,11 @@ export const VitrikushIhorForm = () => {
     verifyPassword: "",
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = () => {// @ts-ignore
     if (!formRef.current.check()) {
       return;
     }
-    dispatch(VitrikushAction.setLogin(formValue));
+    dispatch(actions.setLogin(formValue));
     setIsAuth(true);
   };
 
@@ -71,14 +76,21 @@ export const VitrikushIhorForm = () => {
       </div>
       <h2>Vitrikush Ihor Form</h2>
       <Form
+      // @ts-ignore
         ref={formRef}
+          // @ts-ignore
         onChange={setFormValue}
         formValue={formValue}
         model={model}
       >
-        <TextField name="name" label="Name" placeholder="Enter your name" />
-        <TextField name="email" label="Email" placeholder="Enter your email" />
         <TextField
+          // @ts-ignore
+          name="name" label="Name" placeholder="Enter your name" />
+        <TextField
+          // @ts-ignore
+          name="email" label="Email" placeholder="Enter your email" />
+        <TextField
+          // @ts-ignore
           name="password"
           label="Password"
           type="password"
@@ -86,6 +98,7 @@ export const VitrikushIhorForm = () => {
           placeholder="Enter your password"
         />
         <TextField
+          // @ts-ignore
           name="verifyPassword"
           label="Verify password"
           type="password"

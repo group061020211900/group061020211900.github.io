@@ -1,92 +1,85 @@
 import styles from "./IhorKurylovUsersPage.module.css";
-import { useEffect, useState } from "react";
-import { JSONPlaceholder } from "../../../api/api";
-import { logDOM } from "@testing-library/react";
-import { useDispatch, useSelector } from "react-redux";
-import { actionsPosts, getUsersPosts } from "../../../redux/actions/actionsPosts";
+import {useEffect, useState} from "react";
+import { onSnapshot, collection } from "firebase/firestore"
+import db from "../../../firebase"
+import {addInfo, deleteInfo, editItem, getMyInfo, uploadFile} from "../../../api/firebaseCalls";
+import {getInfo} from "../../../redux/actions/actionsPosts";
+import {useDispatch, useSelector} from "react-redux";
+import {Info} from "../../../common/appTypes";
 
-const Posts = () => {
-  // @ts-ignore
-  const posts: Post[] = useSelector((state) => state?.postsReducer?.posts);
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
-
-  const sayValue = (value: string) => console.log(value);
-  return (
-    <div>
-      <h1>POSTS Compponent</h1>
-      {posts?.length > 0 ? (
-        posts.map((post) => <PostItem post={post} sayValue={sayValue}/>)
-      ) : (
-        <p>NO POsts</p>
-      )}
-    </div>
-  );
-};
-
-interface Post {
-  title: string
-  userId: number
-  body: string
-  id: number
+export interface MyInfo {
+  age: number
+  firstName: string
+  id?: string
+  lastName: string
+  position: string
+  url?: string
 }
 
-interface Props {
-  post: Post,
-  sayValue: (s: string) => void,
+const newInfo =  {
+  age: 122,
+  firstName: "string",
+  lastName: "string",
+  position: "string",
 }
-
-const PostItem = ({ post, sayValue }: Props) => (
-  <div
-  onClick={() => sayValue("123")}
-  >
-    <p>{post.title}</p>
-    <p>post made by user with id {post.userId}</p>
-    <span>{post.body}</span>
-    <hr />
-  </div>
-);
 
 const IhorKurylovUsersPage = () => {
-  const [posts, setPosts] = useState<Post[]>();
-  // const [error, setError] = useState("");
   const dispatch = useDispatch();
+  // const [myInfo, setMyInfo] = useState<MyInfo[]>([]);
+  const [imageURL, setImageURL] = useState<string>();
   // @ts-ignore
-  const isLoading: boolean = useSelector((state) => state?.postsReducer?.isLoading);
+  const myInfo = useSelector((state => state.postsReducer.info));
   // @ts-ignore
-  const _getUsersPosts = () => dispatch(getUsersPosts());
-
-
+  const getInfoThunk = () => dispatch(getInfo());
   useEffect(() => {
-    _getUsersPosts();
+    getInfoThunk();
   }, []);
-
-  // const getPOsts = async () => {
-  //   try {
-  //     const resp = await JSONPlaceholder.postPost({
-  //       title: "my post",
-  //       body: "my body",
-  //       userId: 1,
-  //     });
-  //     console.log("resp", resp.data);
-  //   } catch (e) {
-  //     console.log(e);
-  //   } finally {
-  //     console.log("finally");
-  //   }
-  // };
-
-  // useEffect( () => {
-  //   setTimeout(() => {
-  //        getPOsts();
-  //   }, 5000);
-  // }, []);
+const handleUpload = (e:any) =>{
+  e.preventDefault();
+  const file = e?.target[0]?.files[0]
+  if(!file) return;
+  uploadFile(file, setImageURL);
+}
 
   return (
     <div className={styles.container}>
       <h1>USERS</h1>
-      {isLoading ? <h1>Loading....</h1> : <Posts />}
+      <form onSubmit={handleUpload}>
+        <input type="file"/>
+        <button type="submit">Upload image</button>
+      </form>
+      <button
+      onClick={() => addInfo(newInfo)}
+      >ADDDD</button>
+      {myInfo?.map((item: Info, index: number) => {
+      return (
+        <div
+          key={index}
+        >
+          <button
+          onClick = {() => editItem(item?.id, {
+            age: 35,
+            firstName: "Ihor",
+            lastName: "string",
+            position: "string",
+            url: imageURL ? imageURL : ""
+          })}>
+            Edit Item
+          </button>
+          <button
+            onClick={()=> deleteInfo(item?.id)}>
+            Delete
+          </button>
+        <p>{item.age}</p>
+        <p>{item.firstName}</p>
+        <p>{item.id}</p>
+        <p>{item.lastName}</p>
+        <p>{item.position}</p>
+          {item?.url && <img src={item.url} style={{height: "200px"}} alt=""/>}
+        <br/>
+        <br/>
+        <br/>
+      </div>)})}
     </div>
   );
 };

@@ -15,7 +15,9 @@ export const ContainerButtonVitrikush = () => {
     "black",
     "white",
   ];
-  const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
+  const randomColor = ()=> colors[Math.floor(Math.random() * colors.length)];
+
+  
 
   const [color, setColor] = useState(randomColor);
   const [colorBg, setColorBg] = useState(randomColor);

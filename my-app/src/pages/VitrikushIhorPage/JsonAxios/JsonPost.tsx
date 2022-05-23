@@ -1,10 +1,16 @@
 import { useEffect } from "react";
 import { JsonItem } from "./JsonItem";
 
-export const JsonPost = () => {
-  const posts = JSON.parse(localStorage.getItem("posts"));
-  useEffect(() => {}, [posts]);
+export interface Posts {
+  title: string;
+  body: string;
+  userId: number;
+  id: number;
+}
 
+export const JsonPost = () => {
+  const posts:Posts[] = JSON.parse(localStorage.getItem("posts")|| '{}');
+  useEffect(() => {}, [posts]);
   return (
     <div>
       {posts?.length > 0 ? (

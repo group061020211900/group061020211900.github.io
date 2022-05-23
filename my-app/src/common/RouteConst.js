@@ -19,6 +19,7 @@ export const RouteConst = {
   DANYLO_FORM: "/danylo/form",
   DANYLO_AXIOS: "/danylo/axios",
   DANYLO_AXIOS_JSON: "/danylo/axios/json",
+  VASYLYATSISHIN_FORM: "/vasylyatsishin/form",
   Vitrikush_Ihor: "/VitrikushIhor",
   Vitrikush_Ihor_FORM: "/VitrikushIhor/form",
   Vitrikush_Ihor_Axios: "/VitrikushIhor/axios",

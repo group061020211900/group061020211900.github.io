@@ -3,9 +3,15 @@ import { JSONPlaceholder } from "../../../api/api";
 import { RoutVitrikushIhorHome } from "../../../common/UsersRout/RoutVitrikushIhorHome";
 import { PhotoItem } from "./PhotoItem";
 
+export interface Photo{
+	id?: number;
+	title: string;
+	thumbnailUrl: string;
+}
+
 
 export const VitrikushIhorAxios = () => {
-	const [photos, setPhotos] = useState([]);
+	const [photos, setPhotos] = useState<Photo[]>([]);
 	const [error, setError] = useState("");
 
 	useEffect(() => {
@@ -24,7 +30,7 @@ export const VitrikushIhorAxios = () => {
 		<div>
 			<div><RoutVitrikushIhorHome /></div>
 			{photos?.length > 0 ? (
-				photos.map((photo, i) => (
+				photos.map((photo) => (
 					<PhotoItem
 						key={photo.id}
 						title={photo.title}

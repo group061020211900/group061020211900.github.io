@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styles from "./VasylPage.module.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { JSONPlaceholder } from "../../api/api";
+import { RouteConst } from "../../common/RouteConst";
 const VasylPage = () => {
   var arr = [];
   const ToHome = useNavigate();
@@ -39,6 +40,7 @@ const VasylPage = () => {
       >
         Get data from host
       </button>
+      <NavLink to={RouteConst.VASYLYATSISHIN_FORM} className={styles.navlink}>Go to form</NavLink>
       <div>
         {showComp === true
           ? com.map((el) => <h1 key={Math.random()}>{el.name}</h1>)

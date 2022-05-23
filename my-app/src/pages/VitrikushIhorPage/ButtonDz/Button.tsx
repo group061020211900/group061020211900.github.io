@@ -1,5 +1,13 @@
-import React from "react";
 import s from "./Button.module.scss";
+
+interface Props {
+  id: number;
+  setColor: (color: string) => void;
+  color: string;
+  setColorBg: (color: string) => void;
+  colorBg: string;
+  randomColor: any
+}
 
 export const Button = ({
   color,
@@ -8,7 +16,8 @@ export const Button = ({
   setColorBg,
   setColor,
   randomColor,
-}) => {
+
+}:Props) => {
   return (
     <>
       <div style={{ backgroundColor: `${colorBg}` }} className={s.containerBtn}>
