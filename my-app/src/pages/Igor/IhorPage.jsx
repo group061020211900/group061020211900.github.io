@@ -55,9 +55,15 @@ const MainPage = () => {
 
       {/* <Link to={RouteConst.IhorKurylov}>Go to Mentors page</Link>
       <br />
+
+      <Link to={RouteConst.MARK}>Go to {RouteConst.MARK} page</Link>
+      <br />
+      <Link to={RouteConst.ANDRIANA_M}>Go to Andriana's page</Link>
+
       <Link to={RouteConst.MARK}>Go to {RouteConst.MARK} page</Link> */}
 
       <UsersRouts />
+
 
       {/*//TODO set redirects to your Route*/}
       {/*<h1 onClick={()=> navigate(RouteConst.NOT_FOUND_PAGE)}>IhorPage</h1>*/}
